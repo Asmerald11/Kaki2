@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const urlPag = process.env.URL_PAGINA
+const urlPag = 'https://kakireact.herokuapp.com//api/auth'
 
 export async function registerUser (registroUsuario) {
   try {  
