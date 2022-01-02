@@ -31,7 +31,7 @@ const Registro = ({ handleSubmit }) => {
                 <div className="reg-form">
                     <h1>Registrarse</h1>
                     <form onSubmit={regUser}>
-                        <input type="text" name="username" placeholder="Usuario" value={regData.name} onChange={handleChange} required />
+                        <input type="text" placeholder="Nombre" name="name" value={regData.name} onChange={handleChange} required />   
                         <input type="password" name="password" placeholder="Contraseña" value={regData.password} onChange={handleChange} required />
                         <input type="text" name="email" placeholder="Email" value={regData.email} onChange={handleChange} required />
                         <input type="submit" placeholder="Registrarse" />

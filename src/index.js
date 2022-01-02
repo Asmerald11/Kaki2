@@ -24,8 +24,8 @@ render(
   <BrowserRouter>
     <Routes>
       <Route exact path="/" element={<Home />} />
-      <Route exact path="/login" element={<Login handleLogin={handleLogin} />} />
-      <Route exact path="/registro" element={<Registro handleSubmit={handleSubmit} />} />
+      <Route exact path="/api/auth/login" element={<Login handleLogin={handleLogin} />} />
+      <Route exact path="/api/auth/registro" element={<Registro handleSubmit={handleSubmit} />} />
       <Route exact path="/comisiones" element={<Comisiones />} />
       <Route exact path="/acerca" element={<Acerca />} />
       <Route exact path="/trabajos" element={<Trabajos />} />

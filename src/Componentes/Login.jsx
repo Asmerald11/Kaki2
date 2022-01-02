@@ -38,7 +38,7 @@ const Login = ({handleLogin}) => {
                     <input type="password" name="password" placeholder="Contraseña" value={loginData.password} onChange={handleChange} required />
                     <input type="submit" placeholder="Conectarse" />
                 </form>
-                <a href="/registro" rel="noopener noreferrer"><h6>¿No estas registrado? ¡Crea una cuenta aca!</h6></a>
+                <a href="registro" rel="noopener noreferrer"><h6>¿No estas registrado? ¡Crea una cuenta aca!</h6></a>
             </div>
             <div className="contactos">
                 <div className="izq">
