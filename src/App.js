@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const urlPag = process.env.URL_PAGINA
+
+export async function registerUser (registroUsuario) {
+  try {  
+    const response = await axios({
+          url: `${urlPag}/registro`,
+          method: 'POST',
+          data: registroUsuario
+        })
+
+        console.log(response)
+        if(response.status === 201){
+          console.log('Usuario registrado de manera exitosa.')
+          alert(`${registroUsuario.name} registrado de manera exitosa.`)
+        }
+        return response
+  } catch (e) {
+        alert("No fue posible crear el usuario, ver consola para mas informacion")
+        console.log(e)
+  }
+
 }
 
-export default App;
+export async function loginUser (logueoUsuario) {
+  try {
+    const response = await axios({
+      url: `${urlPag}/login`,
+      method: 'POST',
+      data: logueoUsuario
+    })
+
+    console.log(response)
+    if(response.status === 200){
+      alert(`Logueado correctamente, bienvenido/a ${logueoUsuario.email}`)
+    }
+    return response
+  }  catch (e) {
+      alert("Usuario o contraseña erroneos, intente nuevamente.")
+      console.log(e)
+  }
+}
